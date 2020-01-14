@@ -1,33 +1,66 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
+//Quotes array with 5 objects each with quote properities // 
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+var quotes = [
 
-/*** 
- * `quotes` array 
-***/
+{
+    quote: "'This too shall pass'", 
+    source:"-Edward FitzGerald", 
+    citation:"Persian fable", 
+    year:"1848",
+    color:"teal"
+} ,
+{
+    quote: "'If life were predictable it would cease to be life, and be without flavor.'", 
+    source:"-Eleanor Roosevelt",
+    color:"maroon"
+},
+{
+    quote: "'The greatest glory in living lies not in never falling, but in rising every time we fall.'", 
+    source: "-Nelson Mandela",
+    color: "darkgreen"},
+{
+    quote: "'When you reach the end of your rope, tie a knot in it and hang on.'",
+    source:"-Franklin D. Roosevelt",
+    color: "whitesmoke"
+},
+{
+    quote: "'Life is either a daring adventure or nothing at all.'", 
+    source:"-Helen Keller",
+    color: "gray"
+}
 
+];
 
+//function to randomly select 1 of the objects/quotes // 
 
-/***
- * `getRandomQuote` function
-***/
+function getRandomQuote() {
+    var randomNum = Math.floor(Math.random() * quotes.length);
+    return quotes[randomNum];
+};
 
+//function to display properities of object associated with getRandomQuote() result // 
 
+function printQuote(){
 
-/***
- * `printQuote` function
-***/
+var rand = getRandomQuote();
+//variable holds the object/properties//
+var message = '';
+var color = '';
 
+message += '<p class = quote>' + rand.quote + '</p>';
+message += '<p class= source >' + rand.source + '</p>';
+if (rand.citation){message += '<p class= source >' + rand.citation + '</p>';}
+if (rand.year){message += '<p class= source >' + rand.year + '</p>';}
+document.getElementById('quote-box').innerHTML = message;
+//html to display the different properities of the quote objects on separate lines//
+color += rand.color;
+document.body.style.backgroundColor= color;
+//changes the background color based on color property of the object//
+};
 
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
-
+//the printQuote function is executed when the button is clicked//
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+
+
+
