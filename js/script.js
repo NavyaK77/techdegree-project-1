@@ -1,3 +1,4 @@
+  
 //Quotes array with 5 objects each with quote properities // 
 
 var quotes = [
@@ -6,7 +7,6 @@ var quotes = [
     quote: "'This too shall pass'", 
     source:"-Edward FitzGerald", 
     citation:"Persian fable", 
-    year:"1848",
     color:"teal"
 } ,
 {
@@ -26,6 +26,7 @@ var quotes = [
 {
     quote: "'Life is either a daring adventure or nothing at all.'", 
     source:"-Helen Keller",
+    year: '1940',
     color: "gray"
 }
 
@@ -60,7 +61,6 @@ document.body.style.backgroundColor= color;
 
 //the printQuote function is executed when the button is clicked//
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
-
 
 
 
